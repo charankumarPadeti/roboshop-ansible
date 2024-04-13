@@ -69,4 +69,4 @@
 
   - name: load cities data
     ansible.builtin.command: mysql -h mysql.charan.fun -uroot -pRoboShop@1 < /app/schema/shipping.sql
-    when: schema.stdout == "0" 
+    when: schema.stdout != "1" 
