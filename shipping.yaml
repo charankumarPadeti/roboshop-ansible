@@ -62,6 +62,7 @@
   - name: check cities schema exists or not
     ansible.builtin.command: mysql -h mysql.charan.fun -uroot -p{{mysql_password}}
      -sN -e "SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'cities'"
+    register: schema
 
   - name: print output
     ansible.builtin.debug:
